@@ -1,0 +1,21 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "node-sass": "^3.13.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "scripts": {
+    "background-sass-watcher": "./node_modules/.bin/node-sass --watch --recursive src/scss -o src & WATCH_SASS_PID=$!",
+    "compile-sass": "./node_modules/.bin/node-sass --recursive src/scss -o src",
+    "start": "npm run compile-sass && npm run background-sass-watcher && react-scripts start",
+    "build": "npm run compile-sass && npm run background-sass-watcher && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
